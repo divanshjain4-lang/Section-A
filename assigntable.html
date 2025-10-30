@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Class Time Table — ABES Engineering College</title>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --border:#d7d7d7;
+      --header:#0b2b5a;
+      --muted:#666;
+      --blue:#bfe8f7;       /* light blue for L */
+      --pink:#f2c0e6;       /* pink for T */
+      --orange:#ffd07a;     /* orange for VACA-304 (HJ+AL) */
+      --green:#c7f2d9;      /* green for labs / other */
+      --red:#f3b9b9;        /* red/pale */
+      --font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    body{
+      font-family:var(--font-family);
+      background: #f6f8fa;
+      color:#111;
+      margin:20px;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      background:var(--bg);
+      border:1px solid var(--border);
+      box-shadow: 0 6px 18px rgba(15,15,15,0.05);
+      padding:18px;
+    }
+
+    .college{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:6px;
+    }
+    .logo{
+      width:64px;
+      height:64px;
+      background:linear-gradient(180deg,#6b2e00,#a95800);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:8px;
+      font-weight:700;
+      font-size:12px;
+    }
+    .title{
+      flex:1;
+    }
+    .title h1{
+      margin:0;
+      font-size:20px;
+      letter-spacing:0.2px;
+      color:var(--header);
+    }
+    .title p{
+      margin:2px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* table layout */
+    table.timetable{
+      width:100%;
+      border-collapse:collapse;
+      table-layout:fixed;
+      margin-top:16px;
+      font-size:13px;
+    }
+    table.timetable th, table.timetable td{
+      border:1px solid var(--border);
+      padding:6px 8px;
+      vertical-align:middle;
+      text-align:center;
+      word-wrap:break-word;
+    }
+
+    table.timetable thead th{
+      background:#fafafa;
+      font-weight:700;
+      color:var(--header);
+      font-size:13px;
+      padding:10px 8px;
+    }
+
+    .time-col{
+      width:120px;
+      background:#f7f9fb;
+      font-weight:600;
+      color: #333;
+    }
+
+    /* cell colors */
+    .cell-L{ background: var(--blue); }
+    .cell-T{ background: var(--pink); }
+    .cell-V{ background: var(--orange); }
+    .cell-G{ background: var(--green); }
+    .cell-P{ background: var(--red); }
+
+    /* small text style inside cells */
+    .sub{
+      display:block;
+      font-size:11px;
+      color:#2b2b2b;
+      margin-top:4px;
+      font-weight:600;
+    }
+    .meta{
+      font-size:11px;
+      color:#333;
+      margin-top:3px;
+    }
+
+    /* responsive */
+    @media (max-width:900px){
+      .time-col{ display:none; } /* hide left time column for narrow screens */
+      table.timetable th, table.timetable td{ font-size:12px; padding:8px 6px; }
+      .container{ padding:12px; }
+    }
+
+    /* caption like area showing dept/session */
+    .info-row{
+      display:flex;
+      justify-content:space-between;
+      gap:8px;
+      align-items:flex-start;
+      margin-top:6px;
+      margin-bottom:6px;
+    }
+    .info-left{
+      font-size:13px;
+    }
+    .info-right{
+      text-align:right;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    /* small helper */
+    .note{
+      margin-top:12px;
+      font-size:12px;
+      color:var(--muted);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <div class="college">
+      <div class="logo">ABES</div>
+      <div class="title">
+        <h1>ABES Engineering College, Ghaziabad</h1>
+        <p>CLASS TIME TABLE — DEPARTMENT: COMPUTER APPLICATIONS</p>
+      </div>
+      <div style="text-align:right">
+        <div style="font-weight:700">w.e.f : 15 April 2025</div>
+        <div style="color:var(--muted);font-size:13px">Session - 2024-25, Even Semester</div>
+      </div>
+    </div>
+
+    <div class="info-row">
+      <div class="info-left">
+        <div><strong>Alpna Lodhi</strong></div>
+        <div>Dept: MCA</div>
+      </div>
+      <div class="info-right">
+        <div><strong>CLASS TIME TABLE</strong></div>
+      </div>
+    </div>
+
+    <!-- Timetable table -->
+    <table class="timetable" aria-label="Class timetable">
+      <thead>
+        <tr>
+          <th class="time-col">TIME / DAY</th>
+          <th>1<br><small>08:50 - 09:40</small></th>
+          <th>2<br><small>09:40 - 10:30</small></th>
+          <th>3<br><small>10:40 - 11:30</small></th>
+          <th>4<br><small>11:30 - 12:20</small></th>
+          <th>5<br><small>12:20 - 01:10</small></th>
+          <th>6<br><small>01:10 - 02:00</small></th>
+          <th>7<br><small>01:10 - 02:00</small></th>
+          <th>8<br><small>02:00 - 02:50</small></th>
+          <th>9<br><small>02:50 - 03:40</small></th>
+          <th>10<br><small>03:40 - 04:30</small></th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- MONDAY -->
+        <tr>
+          <td class="time-col"><strong>MONDAY</strong></td>
+          <td class="cell-L">
+            <div><strong>L</strong></div>
+            <div class="sub">AB-206</div>
+            <div class="meta">25VC-101-AL</div>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <!-- period 7 -->
+          <td class="cell-L">
+            <div><strong>L</strong></div>
+            <div class="sub">AB-206</div>
+            <div class="meta">25VC-101-AL</div>
+          </td>
+          <!-- period 8 -->
+          <td class="cell-G" colspan="2">
+            <div><strong>T</strong></div>
+            <div class="sub">VACA-304 (HJ+AL)</div>
+            <div class="meta">Sec-B</div>
+          </td>
+          <!-- period 10 -->
+          <td></td>
+        </tr>
+
+        <!-- TUESDAY -->
+        <tr>
+          <td class="time-col"><strong>TUESDAY</strong></td>
+          <td class="cell-T" colspan="1">
+            <div><strong>T</strong></div>
+            <div class="sub">AB-109</div>
+            <div class="meta">VACA304-HJ+AL - Sec-C</div>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="cell-L"></td>
+          <td class="cell-L"></td>
+          <td class="cell-G" colspan="1">
+            <div style="font-weight:700">Mentor-Mentee</div>
+            <div class="meta">(Final Year)</div>
+          </td>
+        </tr>
+
+        <!-- WEDNESDAY -->
+        <tr>
+          <td class="time-col"><strong>WEDNESDAY</strong></td>
+          <td></td>
+          <td class="cell-V" colspan="2">
+            <div><strong>T</strong></div>
+            <div class="sub">VACA-304 (HJ+AL)</div>
+            <div class="meta">Sec-C</div>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <!-- THURSDAY -->
+        <tr>
+          <td class="time-col"><strong>THURSDAY</strong></td>
+          <td class="cell-L">
+            <div><strong>L</strong></div>
+            <div class="sub">AB-206</div>
+            <div class="meta">25VC-101-AL</div>
+          </td>
+          <td></td>
+          <td></td>
+          <td class="cell-T">
+            <div><strong>T</strong></div>
+            <div class="sub">AB-108</div>
+            <div class="meta">VACA304-HJ+AL - Section B</div>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="cell-P" colspan="2">
+            <div style="font-weight:700">P</div>
+            <div class="sub">AB-206</div>
+            <div class="meta">25VC154 - AL+AP</div>
+          </td>
+        </tr>
+
+        <!-- FRIDAY -->
+        <tr>
+          <td class="time-col"><strong>FRIDAY</strong></td>
+          <td></td>
+          <td></td>
+          <td class="cell-T">
+            <div><strong>T</strong></div>
+            <div class="sub">AB-207</div>
+            <div class="meta">VACA304-HJ+AL - Sec-A</div>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="cell-L">
+            <div><strong>L</strong></div>
+            <div class="sub">AB-206</div>
+            <div class="meta">25VC-101-AL</div>
+          </td>
+          <td class="cell-G">
+            <div style="font-weight:700">Mentor-Mentee</div>
+            <div class="meta">(First Year)</div>
+          </td>
+          <td></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <div class="note">
+      <strong>Notes:</strong> Cells are color-coded: <span style="background:var(--blue);padding:2px 8px;border-radius:4px;margin-left:6px;"> L (Lab/Class)</span>
+      <span style="background:var(--pink);padding:2px 8px;border-radius:4px;margin-left:6px;"> T (Theory)</span>
+      <span style="background:var(--orange);padding:2px 8px;border-radius:4px;margin-left:6px;"> VACA-304</span>
+      <span style="background:var(--red);padding:2px 8px;border-radius:4px;margin-left:6px;"> P (Practical)</span>
+    </div>
+  </div>
+</body>
+</html>
