@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2c3e50;
+            padding: 15px;
+            color: white;
+            text-align: center;
+        }
+        nav {
+            background-color: #34495e;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #1abc9c;
+        }
+        .content {
+            margin-top: 80px;
+        }
+        h1 {
+            margin: 0;
+        }
+        h2 {
+            color: #34495e;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #999;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #e0e0e0;
+        }
+        .section {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px;
+            border: 1px solid #ccc;
+        }
+        form {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 60%;
+            margin: auto;
+        }
+        input, textarea {
+            width: 95%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+        }
+        input[type="submit"], input[type="reset"] {
+            width: auto;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 8px 12px;
+            margin-right: 5px;
+        }
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #2980b9;
+        }
+        footer {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Portfolio</h1>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="content">
+        <div class="section" id="about">
+            <h2>About Me</h2>
+            <p>My name is <b>Your Name</b>. I am a student of <b>master of</b> of Computer Applications (BCA)</b> currently in 1st semester. I am interested in web development, programming, and database management.</p>
+        </div>
+
+        <div class="section" id="education">
+            <h2>Education</h2>
+            <table>
+                <tr>
+                    <th>Course</th>
+                    <th>Institution</th>
+                    <th>Year</th>
+                    <th>Percentage</th>
+                </tr>
+                <tr>
+                    <td>BCA</td>
+                    <td>institute of technology and science</td>
+                    <td>2022 - 2025</td>
+                    <td>65</td>
+                </tr>
+                <tr>
+                    <td>12th</td>
+                    <td>dav public school</td>
+                    <td>2021</td>
+                    <td>75</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section" id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>C Programming</li>
+                <li>SQL</li>
+                <li>Git and GitHub</li>
+            </ul>
+        </div>
+
+        <div class="section" id="projects">
+            <h2>Projects</h2>
+            <ol>
+                <li><b>E-Commerce Website:</b> A mini project showing online shopping interface using HTML.</li>
+                <li><b>College Event Portal:</b> A website to display college events and registration form.</li>
+                <li><b>Calculator in Python:</b> A simple calculator using if-elif conditions.</li>
+            </ol>
+        </div>
+
+        <div class="section" id="contact">
+            <h2>Contact Me</h2>
+            <form action="mailto:your.email@example.com" method="post">
+                <label>Name:</label><br>
+                <input type="text" name="name"><br>
+
+                <label>Email:</label><br>
+                <input type="email" name="email"><br>
+
+                <label>Message:</label><br>
+                <textarea name="message" rows="4"></textarea><br>
+
+                <input type="submit" value="Send">
+                <input type="reset" value="Clear">
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Your Name. All rights reserved.
+    </footer>
+</body>
+</html>
